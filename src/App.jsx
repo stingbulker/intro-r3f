@@ -7,7 +7,7 @@ const Cube = ({ position, size, color }) => {
   useFrame((state, delta) => {
     ref.current.rotation.x += delta * 2
     ref.current.rotation.y += delta * 2
-    ref.current.position.z += delta
+    ref.current.position.z = Math.sin(state.clock.elapsedTime) * 2
   });
   return (
     <mesh position={position} ref={ref}>
